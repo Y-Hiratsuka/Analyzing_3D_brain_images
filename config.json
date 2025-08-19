@@ -1,0 +1,6 @@
+{
+    "original_data_path":"data/original_images",
+    "brains_csv_path":"data/input.csv",
+    "adjusted_images_dir_path":"result/adjusted_brains"
+    
+}
