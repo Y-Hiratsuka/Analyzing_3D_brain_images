@@ -44,7 +44,7 @@ def original_rotate(rotate_brain_path,save_dir_path,
     # 基準脳（1-1）にはない部分は全て0に設定する
     if not "1-1_GAP43" in rotate_brain_path :
         rotated_array = delete_unnecessary_areas(rotated_array)
-    print('save')
+
     # 画像群の保存
     save_images_func(rotated_array, save_dir_path)
     
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     brain_name = args.brain_name
 
     INPUT_CSV_PATH = get_params('brains_csv_path')
-    IMAGE_PATH = get_params('adjusted_images_dir_path')
+    IMAGE_PATH = get_params('corrected_images_dir_path')
 
 
     rotate_brain_path = f'{IMAGE_PATH}/{brain_name}/normalize_images'

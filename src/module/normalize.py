@@ -35,7 +35,7 @@ if __name__ == "__main__":
     brain_name = args.brain_name
     
     
-    IMAGES_PATH = get_params("adjusted_images_dir_path")
+    IMAGES_PATH = get_params("corrected_images_dir_path")
     save_dir_path = f'{IMAGES_PATH}/{brain_name}/normalize_images'
     
     # save_dirがない場合作る

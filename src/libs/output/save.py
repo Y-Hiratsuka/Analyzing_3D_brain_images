@@ -9,9 +9,8 @@ def save_images_func(array: np.ndarray, save_dir_path: str) -> None:
     '''
     #! Do the final one again at the end
     mkdir_if_none(save_dir_path)
-    print(array[0])
     for i in range(len(array)):
-        print(i)
         zero_n = 4 - len(str(i))
         file_name = "0" * zero_n + f"{i}.png"
-        cv2.imwrite(f'{save_dir_path}/{file_name}', array[i])
+    
+        cv2.imwrite(f'{save_dir_path}/{file_name}', array[i].astype("uint8"))
