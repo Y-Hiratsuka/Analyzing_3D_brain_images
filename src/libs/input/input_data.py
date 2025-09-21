@@ -42,3 +42,4 @@ def input_data_func(brain_name:str,input_path:str) -> dict:
     }
     
     return dic
+

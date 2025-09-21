@@ -1,6 +1,43 @@
 {
     "original_data_path":"data/original_images",
     "brains_csv_path":"data/input.csv",
-    "corrected_images_dir_path":"result/corrected_brains"
-    
+    "corrected_images_dir_path":"result/corrected_brains",
+    "mean_dir_path":"result/mean_images",
+    "category_name_li":["ko_GAP43","ko_pT172","wild_GAP43","wild_pT172"],
+    "ko_GAP43":[
+        "result/corrected_brains/012323GT1-KO4_GAP43",
+        "result/corrected_brains/030123GT1-KO-1_GAP43",
+        "result/corrected_brains/030123GT1-KO-2_GAP43",
+        "result/corrected_brains/112522GT1-KOsample1_GAP43",
+        "result/corrected_brains/012323 GT1-KO V_GAP43"
+    ],
+    "ko_pT172":[
+        "result/corrected_brains/012323 GT1-KO 4_pT172",
+        "result/corrected_brains/012323 GT1-KO V_pT172",
+        "result/corrected_brains/030123 GT1-KO-1_pT172",
+        "result/corrected_brains/112522 GT1-KO sample1_pT172"
+    ],
+    "wild_GAP43":[
+        "result/corrected_brains/1-1_GAP43",
+        "result/corrected_brains/1-2_GAP43",
+        "result/corrected_brains/1-3_GAP43",
+        "result/corrected_brains/1-4_GAP43",
+        "result/corrected_brains/1-5_GAP43",
+        "result/corrected_brains/1-6_GAP43",
+        "result/corrected_brains/1-7_GAP43",
+        "result/corrected_brains/1-8_GAP43",
+        "result/corrected_brains/1-9_GAP43",
+        "result/corrected_brains/1-10_GAP43",
+        "result/corrected_brains/1-11_GAP43"
+    ],
+    "wild_pT172": [
+        "result/corrected_brains/2-1_pT172",
+        "result/corrected_brains/2-2_pT172",
+        "result/corrected_brains/2-3_pT172",
+        "result/corrected_brains/2-4_pT172",
+        "result/corrected_brains/2-5_pT172",
+        "result/corrected_brains/2-6_pT172",
+        "result/corrected_brains/2-7_pT172",
+        "result/corrected_brains/2-8_pT172"
+    ]
 }
