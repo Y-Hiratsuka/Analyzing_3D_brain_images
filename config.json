@@ -46,5 +46,6 @@
         ["ko_pT172","wild_GAP43"],
         ["wild_GAP43","wild_pT172"],
         ["ko_GAP43","ko_pT172"]
-    ]
+    ],
+    "standard_brain_path":"result/corrected_brains/1-1_GAP43/standard_brain"
 }
