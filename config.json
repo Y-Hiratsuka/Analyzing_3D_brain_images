@@ -3,6 +3,7 @@
     "brains_csv_path":"data/input.csv",
     "corrected_images_dir_path":"result/corrected_brains",
     "mean_dir_path":"result/mean_images",
+    "diff_dir_path":"result/difference",
     "category_name_li":["ko_GAP43","ko_pT172","wild_GAP43","wild_pT172"],
     "ko_GAP43":[
         "result/corrected_brains/012323GT1-KO4_GAP43",
@@ -39,5 +40,11 @@
         "result/corrected_brains/2-6_pT172",
         "result/corrected_brains/2-7_pT172",
         "result/corrected_brains/2-8_pT172"
+    ],
+    "category_combination":[
+        ["ko_GAP43","wild_GAP43"],
+        ["ko_pT172","wild_GAP43"],
+        ["wild_GAP43","wild_pT172"],
+        ["ko_GAP43","ko_pT172"]
     ]
 }

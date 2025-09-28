@@ -41,6 +41,11 @@ def paths_to_3d_gray_array(paths:list) ->np.ndarray:
     arr = np.concatenate(rgba_arrays)
     return arr
 
+def dir_to_array(dir_path):
+    input_path_li = glob.glob(f'{dir_path}/*.png')
+    input_array = paths_to_3d_gray_array(input_path_li)
+    return input_array
+
 def path_to_image_array(dir_path: str) -> np.ndarray:
     """
     指定されたディレクトリを配列に変換する
