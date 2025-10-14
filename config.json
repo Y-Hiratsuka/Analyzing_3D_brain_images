@@ -47,5 +47,37 @@
         ["wild_GAP43","wild_pT172"],
         ["ko_GAP43","ko_pT172"]
     ],
-    "standard_brain_path":"result/corrected_brains/1-1_GAP43/standard_brain"
+    "standard_brain_path":"result/corrected_brains/1-1_GAP43/standard_brain",
+    "cutting_csv_path":"data/cutting_index_brain.csv",
+    "all_brain_name_li":[
+        "012323GT1-KO4_GAP43",
+        "030123GT1-KO-1_GAP43",
+        "030123GT1-KO-2_GAP43",
+        "112522GT1-KOsample1_GAP43",
+        "012323 GT1-KO V_GAP43",
+        "012323 GT1-KO 4_pT172",
+        "012323 GT1-KO V_pT172",
+        "030123 GT1-KO-1_pT172",
+        "112522 GT1-KO sample1_pT172",
+        "1-1_GAP43",
+        "1-2_GAP43",
+        "1-3_GAP43",
+        "1-4_GAP43",
+        "1-5_GAP43",
+        "1-6_GAP43",
+        "1-7_GAP43",
+        "1-8_GAP43",
+        "1-9_GAP43",
+        "1-10_GAP43",
+        "1-11_GAP43",
+        "2-1_pT172",
+        "2-2_pT172",
+        "2-3_pT172",
+        "2-4_pT172",
+        "2-5_pT172",
+        "2-6_pT172",
+        "2-7_pT172",
+        "2-8_pT172"
+    ],
+    "coordinate_csv_path":"result/coordinate.csv"
 }
