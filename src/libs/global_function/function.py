@@ -1,6 +1,7 @@
 from webcolors import name_to_rgb
 import os
 import datetime
+from typing import Union
 
 def mkdir_if_none(path: str) -> None:
     """パスのディレクトリがない場合は作る
@@ -74,3 +75,20 @@ class GetInfo:
     def making_now_date(self):
         dt_now = datetime.datetime.now()
         return dt_now.strftime('%m/%d %H:%M:%S')
+
+def get_path_name(path: str, index: Union[list,int],extension = True):
+    if extension == False:
+        path = "/".join(path.split('.')[:-1])
+        
+    if type(index) is list:
+        if len(index) != 1:
+            path_li = path.split("/")[index[0]:index[1]]
+        else:
+            path_li = path.split("/")[index[0]:]
+        path_name = "/".join(path_li)
+        return path_name
+    elif type(index) is int:
+        path_name = path.split("/")[index]
+        return path_name
+    else:
+        return type(index)

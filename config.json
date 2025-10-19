@@ -80,5 +80,6 @@
         "2-8_pT172"
     ],
     "coordinate_csv_path":"result/coordinate.csv",
-    "certification_csv_dir_path":"result/certification"
+    "certification_csv_dir_path":"result/certification",
+    "color_bar_path":"result/color_bar.png"
 }

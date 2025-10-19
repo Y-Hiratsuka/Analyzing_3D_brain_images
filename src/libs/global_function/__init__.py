@@ -1,1 +1,1 @@
-from .function import mkdir_if_none,GetInfo
+from .function import mkdir_if_none,GetInfo, get_path_name
