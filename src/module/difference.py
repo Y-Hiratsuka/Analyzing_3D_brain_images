@@ -3,6 +3,7 @@ import argparse
 
 from libs.input import dir_to_array
 from libs.output import save_images_func
+from libs.overlap import overlap_func
 
 def difference_func(path1,path2, n = 30):
     array1 = dir_to_array(path1).astype(np.float32)
@@ -36,6 +37,11 @@ if __name__ == '__main__':
     path2 = args.path2
     save_path = args.save_path
     
+    # 差分画像の作成
     output_array = difference_func(path1, path2)
     
+    # 基準画像を重ね合わせる
+    output_array = overlap_func(output_array)
+    
+    # 出力
     save_images_func(output_array, save_path)

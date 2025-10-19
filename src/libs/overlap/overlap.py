@@ -19,7 +19,10 @@ def overlap_func(rgb_array, standard_path = get_params('standard_brain_path'),a 
     # 倍率の調整．画像のサイズが違う場合は調整
     zoom_rate = standard_array.shape[0] / rgb_array.shape[0]
     rgb_array = zoom(rgb_array,[1, zoom_rate, zoom_rate, 1], order=0) # 倍率の変化
-
+    
+    # float64 → uint8 に変換
+    rgb_array = rgb_array.astype(np.uint8)
+    
     # レベルごとに結合
     for i in range(len(rgb_array)):
         new_image = cv2.addWeighted(rgb_array[i], a, standard_array[int(i * zoom_rate)], 1-a, 0)
