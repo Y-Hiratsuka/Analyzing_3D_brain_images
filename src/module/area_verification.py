@@ -1,0 +1,60 @@
+import argparse
+import pandas as pd
+import numpy as np
+from scipy import stats
+
+from libs.global_function import mkdir_if_none
+from libs.input import get_params
+from libs.verification import hierarchical_bootstrap_test
+
+def welch(array1, array2):
+    return stats.ttest_ind(array1, array2, equal_var=False)
+
+def area_verification_func(brain1_li, brain2_li):
+    csv_path = get_params('coordinate_csv_path')
+    coordinate_df = pd.read_csv(csv_path)
+    
+    # 1-1_GAP43に存在しない箇所を対象から除外
+    coordinate_df = coordinate_df[coordinate_df['1-1_GAP43'] != 0]
+    
+    coordinate_df = coordinate_df.set_index("coordinate", drop=True)
+    
+    # 指定されたエリアのみに限定
+    coordinate_df = coordinate_df[coordinate_df['cutting'] == 1]
+    
+    
+    # それぞれの群のリストを取得
+    brain1_array = np.array(coordinate_df[brain1_li].T.values.tolist())
+    brain2_array = np.array(coordinate_df[brain2_li].T.values.tolist())
+    
+    result = hierarchical_bootstrap_test(ko=brain1_array,
+                                             wt=brain2_array,)
+    
+    return result
+
+
+if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser(description='''
+    	brains1とbrains2について検定
+    	''')
+    parser.add_argument('brains1_name', help='')
+    parser.add_argument('brains2_name', help='')
+    
+    args = parser.parse_args()
+    
+    brain1_name = args.brains1_name
+    brain2_name = args.brains2_name
+    
+    brain1_path_li = get_params(brain1_name)
+    brain2_path_li = get_params(brain2_name)
+    
+    brain1_li = [path.split("/")[-1] for path in brain1_path_li]
+    brain2_li = [path.split("/")[-1] for path in brain2_path_li]
+    
+    result = area_verification_func(brain1_li, brain2_li)
+    
+    print("=== 階層型ブートストラップ検定 結果 ===")
+    print(f"観測効果量 (KO−WT) : {result['observed_effect']:.3f}")
+    print(f"95%信頼区間 : [{result['ci_low']:.3f}, {result['ci_high']:.3f}]")
+    print(f"両側p値 : {result['p_value']:.4f}")
