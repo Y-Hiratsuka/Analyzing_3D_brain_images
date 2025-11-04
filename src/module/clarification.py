@@ -3,6 +3,7 @@ import argparse
 import glob
 
 from libs.input import paths_to_3d_gray_array
+from libs.global_function import mkdir_if_none
 from libs.output import save_images_func
 
 def z_normalize_3d(img: np.ndarray, desired_mean=150,
@@ -58,7 +59,7 @@ def clarification_func(input_path,output_path):
     input_array = paths_to_3d_gray_array(input_path_li)
     
     output_array = z_normalize_3d(input_array)
-    
+    mkdir_if_none(output_path)
     save_images_func(output_array, output_path)
 
 if __name__ == '__main__':
