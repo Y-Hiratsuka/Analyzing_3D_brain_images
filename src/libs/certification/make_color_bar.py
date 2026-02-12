@@ -43,5 +43,6 @@ def make_color_bar_func():
     cbar.ax.tick_params( colors='white')  # メモリの文字色を白に設定
     
     save_path = get_params('color_bar_path')
-    plt.savefig(save_path)
-    
+    plt.savefig(save_path,dpi=1200)
+
+make_color_bar_func()

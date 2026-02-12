@@ -93,11 +93,15 @@ def area_verification_box_fig_func(
     ax.grid(alpha=0.3)
 
     # 参考に検定結果をサブタイトル等で添える（任意）
-    ax.set_xlabel(f"hierarchical bootstrap test: KO−WT={result['observed_effect']:.3f}, "
-                  f"95%CI=[{result['ci_low']:.3f}, {result['ci_high']:.3f}], "
-                  f"p={result['p_value']:.3g}")
+    # ax.set_xlabel(f"hierarchical bootstrap test: KO−WT={result['observed_effect']:.3f}, "
+    #               f"95%CI=[{result['ci_low']:.3f}, {result['ci_high']:.3f}], "
+    #               f"p={result['p_value']:.3g}")
+    
+    ax.set_xlabel(f"hierarchical bootstrap test: KO−WT=-4.372, "
+                  f"95%CI=[-7.803, -1.402], "
+                  f"p=0.0084")
 
-    fig.savefig(save_path)
+    fig.savefig(save_path, dpi=1200)
     return result, fig, ax, per_brain_means_df
 if __name__ == '__main__':
     
